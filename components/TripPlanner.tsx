@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { MapPin, Users, CalendarDays, Wallet, Compass, Car, Sparkles } from "lucide-react";
 import { recommendDestinations } from "@/lib/recommend";
@@ -123,6 +124,9 @@ export default function TripPlanner() {
                   <p style={{ marginTop: 9 }}><strong>Planning estimate:</strong> {formatINR(item.indicativeBudgetPerPerson)} per person</p>
                   <p style={{ marginTop: 5 }}><strong>Why it matches:</strong> {item.reasons.slice(0, 2).join("; ")}.</p>
                   <p style={{ marginTop: 5, fontSize: 11 }}>{item.seasonNote}</p>
+                  <div style={{ marginTop: 12 }}>
+                    <Link href={`/destinations/${item.id}`} className="primary inline-link">Explore {item.name}</Link>
+                  </div>
                 </div>
               </article>
             ))}

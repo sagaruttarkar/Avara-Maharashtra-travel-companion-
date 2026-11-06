@@ -43,6 +43,23 @@ npm run lint      # ESLint
 npm run typecheck # TypeScript
 ```
 
+## GitHub Pages deployment
+
+This project is configured as a static export for GitHub Pages.
+
+1. Push the repository to GitHub.
+2. In GitHub, open the repository settings and choose Pages.
+3. Set the source to "GitHub Actions".
+4. Push to the `main` branch to trigger the deploy workflow in `.github/workflows/deploy-pages.yml`.
+
+The build automatically injects the repository name as the `NEXT_PUBLIC_BASE_PATH`, so the site is served from:
+
+```text
+https://<your-user>.github.io/<repository-name>
+```
+
+For a custom domain, update the `NEXT_PUBLIC_BASE_PATH` setting and configure your domain in GitHub Pages as needed.
+
 ## Repository map
 
 ```text

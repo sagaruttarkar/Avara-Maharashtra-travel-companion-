@@ -18,6 +18,28 @@ export interface TripPreferences {
   transport: TransportMode;
 }
 
+export interface DetailPoint {
+  title: string;
+  description: string;
+  meta?: string;
+}
+
+export interface ReviewItem {
+  name: string;
+  rating: number;
+  review: string;
+}
+
+export interface DestinationDetail {
+  travelBy: DetailPoint[];
+  hotels: DetailPoint[];
+  hiddenPlaces: DetailPoint[];
+  reviews: ReviewItem[];
+  bestTimeToVisit: string;
+  speciality: string;
+  history: string;
+}
+
 export interface Destination {
   id: string;
   name: string;
@@ -32,4 +54,5 @@ export interface Destination {
   bestFor: string;
   budgetNote: string;
   seasonNote: string;
+  details?: DestinationDetail;
 }
