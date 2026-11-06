@@ -6,6 +6,22 @@ export function generateStaticParams() {
   return destinations.map((destination) => ({ slug: destination.id }));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const destination = destinations.find((item) => item.id === slug);
+
+  if (!destination) {
+    return {
+      title: "Destination not found",
+    };
+  }
+
+  return {
+    title: destination.name,
+    description: destination.description,
+  };
+}
+
 export default async function DestinationPage({
   params,
 }: {

@@ -4,6 +4,10 @@ import AvaraLogo from "@/components/AvaraLogo";
 import TripPlanner from "@/components/TripPlanner";
 import { destinations } from "@/lib/destinations";
 
+export const metadata = {
+  title: "Plan your Maharashtra getaway",
+};
+
 const placeVisuals: Record<string, { image: string; accent: string }> = {
   lonavala: {
     image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80",
